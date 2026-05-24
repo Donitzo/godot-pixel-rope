@@ -100,18 +100,11 @@ void sample_rope_full(float t, out vec2 p, out vec2 tangent) {
 }
 
 float distance_to_pixel_exit(vec2 p, vec2 dir) {
-    vec2 cell_min = floor(p + vec2(0.5)) - vec2(0.5);
-    vec2 cell_max = cell_min + vec2(1.0);
-
-    vec2 side = mix(cell_min, cell_max, step(vec2(0.0), dir));
-
-    vec2 safe_dir = mix(vec2(1e-6), dir, step(vec2(1e-6), abs(dir)));
-    vec2 t = (side - p) / safe_dir;
-
-    vec2 valid = step(vec2(1e-6), abs(dir));
-    t = mix(vec2(1e20), t, valid);
-
-    return max(min(t.x, t.y), 0.0);
+    vec2 cell = floor(p + vec2(0.5));
+    vec2 local = p - cell;
+    vec2 half_distance = vec2(0.5) - local * sign(dir);
+    vec2 t = half_distance / max(abs(dir), vec2(1e-6));
+    return min(t.x, t.y);
 }
 
 float pixel_path_length(vec2 p, vec2 tangent) {
@@ -163,7 +156,9 @@ void vertex() {
     float path_length = pixel_path_length(pc, tangent);
     float full = step(FULL_COVERAGE, path_length + force_full);
     float grace = step(GRACE_COVERAGE, path_length);
-    float alpha = mix(grace * grace_alpha, 1.0, full) * float(!same_as_previous) * float(!is_cut);
+    float not_same = same_as_previous ? 0.0 : 1.0;
+    float not_cut = is_cut ? 0.0 : 1.0;
+    float alpha = mix(grace * grace_alpha, 1.0, full) * not_same * not_cut;
 
     v_color = vec4(COLOR.rgb, COLOR.a * alpha);
 

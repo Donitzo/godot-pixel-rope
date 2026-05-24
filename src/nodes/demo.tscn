@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://uiktb4vsvbd5"]
 
+[ext_resource type="Script" uid="uid://co7yvqx58pp7y" path="res://scripts/cutter.gd" id="1_a47j3"]
 [ext_resource type="Texture2D" uid="uid://b4qv1oiiurhg2" path="res://textures/background.png" id="1_obfg2"]
 [ext_resource type="Texture2D" uid="uid://t8datl44yrvp" path="res://textures/coil.png" id="2_d3o1r"]
 [ext_resource type="Texture2D" uid="uid://cwjtu1jwq53qe" path="res://textures/wall.png" id="3_5vtl4"]
@@ -127,7 +128,23 @@ metadata/_custom_type_script = "uid://dw3ccorpara6f"
 [sub_resource type="CircleShape2D" id="CircleShape2D_ndtgc"]
 radius = 25.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndtgc"]
+size = Vector2(8, 144.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a47j3"]
+size = Vector2(256, 8.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t2aa"]
+size = Vector2(7, 144.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8icdo"]
+size = Vector2(254, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6lgu"]
+size = Vector2(46, 22.5)
+
 [node name="Demo" type="Node2D" unique_id=1922009711]
+script = ExtResource("1_a47j3")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1876780254]
 texture_filter = 1
@@ -236,6 +253,12 @@ position = Vector2(44, 3)
 [node name="Anchor3" type="Node2D" parent="Coil1" unique_id=1867261356]
 position = Vector2(20, 3)
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="Coil1" unique_id=578502453]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coil1/StaticBody2D2" unique_id=2008367827]
+position = Vector2(26, 7.5)
+shape = SubResource("RectangleShape2D_n7xp7")
+
 [node name="Coil2" type="Sprite2D" parent="." unique_id=1254610506]
 texture_filter = 1
 position = Vector2(-22, 41)
@@ -321,6 +344,7 @@ grace_alpha = 0.0
 segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
 segment_repeats = 6
 initial_length = -7.0
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope2" type="MeshInstance2D" parent="Ropes" unique_id=156954660 node_paths=PackedStringArray("start_node", "end_node")]
@@ -331,6 +355,7 @@ grace_alpha = 0.0
 segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
 segment_repeats = 6
 initial_length = -7.0
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope3" type="MeshInstance2D" parent="Ropes" unique_id=633731380 node_paths=PackedStringArray("start_node", "end_node")]
@@ -341,6 +366,7 @@ grace_alpha = 0.0
 segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
 segment_repeats = 6
 initial_length = -7.0
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope4" type="MeshInstance2D" parent="Ropes" unique_id=392454666 node_paths=PackedStringArray("start_node", "end_node")]
@@ -351,6 +377,7 @@ grace_alpha = 0.0
 segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
 segment_repeats = 6
 initial_length = -7.0
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope5" type="MeshInstance2D" parent="Ropes" unique_id=966701414 node_paths=PackedStringArray("start_node", "end_node")]
@@ -361,6 +388,7 @@ grace_alpha = 0.0
 segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
 segment_repeats = 6
 initial_length = -7.0
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope7" type="MeshInstance2D" parent="Ropes" unique_id=1467047071 node_paths=PackedStringArray("start_node", "end_node")]
@@ -371,6 +399,7 @@ grace_alpha = 0.0
 segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
 segment_repeats = 6
 initial_length = 0.0
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope8" type="MeshInstance2D" parent="Ropes" unique_id=1244404820 node_paths=PackedStringArray("start_node", "end_node")]
@@ -381,6 +410,7 @@ grace_alpha = 0.0
 segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
 segment_repeats = 6
 initial_length = 0.0
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope43" type="MeshInstance2D" parent="Ropes" unique_id=1921207016 node_paths=PackedStringArray("start_node", "end_node")]
@@ -391,6 +421,7 @@ grace_alpha = 0.0
 segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
 segment_repeats = 6
 initial_length = 0.0
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope44" type="MeshInstance2D" parent="Ropes" unique_id=2066944086 node_paths=PackedStringArray("start_node", "end_node")]
@@ -401,6 +432,7 @@ grace_alpha = 0.0
 segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
 segment_repeats = 6
 initial_length = 0.0
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope45" type="MeshInstance2D" parent="Ropes" unique_id=200448456 node_paths=PackedStringArray("start_node", "end_node")]
@@ -411,6 +443,7 @@ grace_alpha = 0.0
 segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
 segment_repeats = 6
 initial_length = 0.0
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope9" type="MeshInstance2D" parent="Ropes" unique_id=1976298833 node_paths=PackedStringArray("start_node", "end_node")]
@@ -424,6 +457,7 @@ segment_repeats = 3
 initial_length = 10.0
 rope_force = Vector2(0, -200)
 controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_8icdo")])
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope10" type="MeshInstance2D" parent="Ropes" unique_id=814330423 node_paths=PackedStringArray("start_node", "end_node")]
@@ -437,6 +471,7 @@ segment_repeats = 3
 initial_length = 10.0
 rope_force = Vector2(0, -200)
 controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_8icdo")])
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope11" type="MeshInstance2D" parent="Ropes" unique_id=1591686734 node_paths=PackedStringArray("start_node", "end_node")]
@@ -450,6 +485,7 @@ segment_repeats = 3
 initial_length = 10.0
 rope_force = Vector2(0, -200)
 controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_8icdo")])
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope12" type="MeshInstance2D" parent="Ropes" unique_id=1210677506 node_paths=PackedStringArray("start_node", "end_node")]
@@ -482,7 +518,7 @@ start_node = NodePath("../../Gear/Anchor1")
 end_node = NodePath("../../Coil2/Anchor1")
 grace_alpha = 0.0
 segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
-initial_length = 20.0
+initial_length = 40.0
 rope_force = Vector2(0, 0)
 rope_damping = 0.0
 controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
@@ -498,6 +534,7 @@ initial_length = 5.0
 rope_force = Vector2(0, 0)
 rope_damping = 0.0
 controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope15" type="MeshInstance2D" parent="Ropes" unique_id=602192231 node_paths=PackedStringArray("start_node", "end_node")]
@@ -537,18 +574,20 @@ controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
 collision_radius = 1.0
 
 [node name="Rope40" type="MeshInstance2D" parent="Ropes" unique_id=836258889 node_paths=PackedStringArray("start_node", "end_node")]
+position = Vector2(0, -2)
 script = ExtResource("6_5vtl4")
 start_node = NodePath("../../Gear/Anchor1")
 end_node = NodePath("../../Coil2/Anchor1")
 grace_alpha = 0.0
 segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
-initial_length = 20.0
+initial_length = 40.0
 rope_force = Vector2(0, 0)
 rope_damping = 0.0
 controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
 collision_radius = 1.0
 
 [node name="Rope41" type="MeshInstance2D" parent="Ropes" unique_id=462945427 node_paths=PackedStringArray("start_node", "end_node")]
+position = Vector2(0, 1)
 script = ExtResource("6_5vtl4")
 start_node = NodePath("../../Coil1/Anchor1")
 end_node = NodePath("../../Coil2/Anchor1")
@@ -570,6 +609,7 @@ initial_length = 20.0
 rope_force = Vector2(0, 0)
 rope_damping = 0.0
 controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope19" type="MeshInstance2D" parent="Ropes" unique_id=1551399402 node_paths=PackedStringArray("start_node", "end_node")]
@@ -594,6 +634,7 @@ segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_3ttm7"), SubReso
 roll_velocity = 90.0
 initial_length = 0.0
 rope_force = Vector2(0, 50)
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope17" type="MeshInstance2D" parent="Ropes" unique_id=40224568 node_paths=PackedStringArray("start_node", "end_node")]
@@ -606,6 +647,7 @@ segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_3ttm7"), SubReso
 roll_velocity = 90.0
 initial_length = 0.0
 rope_force = Vector2(0, 50)
+collide_with_world = true
 collision_radius = 1.0
 
 [node name="Rope20" type="MeshInstance2D" parent="Ropes" unique_id=1866216087 node_paths=PackedStringArray("start_node")]
@@ -717,7 +759,6 @@ segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_p5qor")])
 initial_length = 20.0
 rope_force = Vector2(0, -100)
 controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
-collide_with_world = true
 collision_radius = 1.0
 warmup_steps = 64
 warmup_timestep = 0.017
@@ -731,7 +772,6 @@ segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_p5qor")])
 initial_length = 20.0
 rope_force = Vector2(0, -100)
 controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
-collide_with_world = true
 collision_radius = 1.0
 warmup_steps = 64
 warmup_timestep = 0.017
@@ -745,7 +785,6 @@ segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_p5qor")])
 initial_length = 20.0
 rope_force = Vector2(0, -100)
 controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
-collide_with_world = true
 collision_radius = 1.0
 warmup_steps = 64
 warmup_timestep = 0.017
@@ -839,3 +878,23 @@ centered = false
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2048899048]
 position = Vector2(121, 41)
 shape = SubResource("CircleShape2D_ndtgc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1874964233]
+position = Vector2(4, 71.75)
+shape = SubResource("RectangleShape2D_ndtgc")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1585650257]
+position = Vector2(128, 3.75)
+shape = SubResource("RectangleShape2D_a47j3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=892596359]
+position = Vector2(252.5, 71.75)
+shape = SubResource("RectangleShape2D_5t2aa")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1218298180]
+position = Vector2(129, 139.5)
+shape = SubResource("RectangleShape2D_8icdo")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1482337195]
+position = Vector2(77, 124.25)
+shape = SubResource("RectangleShape2D_r6lgu")
