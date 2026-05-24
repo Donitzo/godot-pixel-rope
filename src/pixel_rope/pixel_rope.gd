@@ -86,8 +86,6 @@ const MAX_CONTROL_POINTS: int = 64
 
 ## Whether rope control points collide with 2D physics bodies.
 @export var collide_with_world: bool = false
-## Interval between control points tested for collisions. 1 = test every point.
-@export_range(1, 8) var collision_test_stride: int = 1
 ## 2D physics collision mask used by rope collision queries.
 @export_flags_2d_physics var collision_mask: int = 1
 ## Distance to push rope points away from hit surfaces.
@@ -96,6 +94,12 @@ const MAX_CONTROL_POINTS: int = 64
 @export_range(0.0, 1.0) var collision_friction: float = 0.7
 ## Normal velocity retained after impact.
 @export_range(0.0, 1.0) var collision_restitution: float = 0.2
+## Interval between control points tested for collisions. 1 = test every point. Is fixed.
+@export_range(1, 8) var collision_test_point_interval: int = 1
+## Collision test time interval in physics ticks for idle rope control points
+@export_range(1, 8) var collision_test_idle_stride: int = 4
+## How many seconds of non-colliding it takes for a control point to go idle
+@export var collision_sleep_seconds: float = 2.0
 
 # Raycast distance from INSIDE a collision shape towards the surface
 const _RAYCAST_DISTANCE: float = 8.0
@@ -147,6 +151,12 @@ var _pinned_control_points: Dictionary[int, Vector2] = {}
 # Temporary control points
 var _temp_control_points: PackedVector4Array = PackedVector4Array()
 
+# The number of seconds since a control point collided with the world
+var _seconds_since_control_point_collision: PackedFloat32Array = PackedFloat32Array()
+
+# Current collision stride
+var _collision_tick: int = 0
+
 func _ready() -> void:
     if Engine.is_editor_hint():
         return
@@ -161,6 +171,7 @@ func _ready() -> void:
 
     _cut_control_points.resize(MAX_CONTROL_POINTS)
     _temp_control_points.resize(MAX_CONTROL_POINTS)
+    _seconds_since_control_point_collision.resize(MAX_CONTROL_POINTS)
 
     reset()
 
@@ -200,6 +211,10 @@ func reset() -> void:
     # Reset cut / pinned control points
     for i in MAX_CONTROL_POINTS:
         _cut_control_points[i] = 0
+    
+    # Start ropes sleeping
+    for i in MAX_CONTROL_POINTS:
+        _seconds_since_control_point_collision[i] = collision_sleep_seconds + 1e-6
 
     _material.set_shader_parameter('control_point_is_cut', _cut_control_points)
 
@@ -230,7 +245,7 @@ func reset() -> void:
     # Warmup simulation
     for i in warmup_steps:
         _simulate_points(warmup_timestep)
-        _constrain_points()
+        _constrain_points(warmup_timestep)
 
     _update_shader_params()
 
@@ -396,7 +411,7 @@ func _physics_process(delta: float) -> void:
         return
 
     _simulate_points(delta)
-    _constrain_points()
+    _constrain_points(delta)
 
 func _process(delta: float) -> void:
     if Engine.is_editor_hint():
@@ -422,7 +437,7 @@ func _simulate_points(delta: float) -> void:
         if controller.enabled:
             controller.simulate_points(self, delta, _cp_next, control_point_count)
 
-func _constrain_points() -> void:
+func _constrain_points(delta: float) -> void:
     var pin_start: bool = _start_pinned
     var pin_end: bool = _end_pinned
 
@@ -495,9 +510,20 @@ func _constrain_points() -> void:
             collision_mask
         )
         ray_query.hit_from_inside = false
-
+        
+        _collision_tick += 1
+        
         for j in control_point_count:
-            if is_point_pinned(j) or (j % collision_test_stride) != 0:
+            # Point is skipped or pinned
+            if (j % collision_test_point_interval) != 0 or is_point_pinned(j):
+                continue
+            
+            var sleeping: bool = _seconds_since_control_point_collision[j] > collision_sleep_seconds
+            _seconds_since_control_point_collision[j] += delta
+
+            # Point is sleeping and staggered
+            if sleeping and\
+                ((_collision_tick + j / collision_test_point_interval) % collision_test_idle_stride) > 0:
                 continue
 
             var point: Vector2 = _cp_next[j]
@@ -525,6 +551,8 @@ func _constrain_points() -> void:
 
             if best_overlap == INF:
                 continue
+            
+            _seconds_since_control_point_collision[j] = 0
 
             var movement: Vector2 = best_target_position - _cp_next[j]
             var velocity: Vector2 = _cp_next[j] - _cp_last[j]
