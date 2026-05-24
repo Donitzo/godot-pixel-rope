@@ -1,0 +1,841 @@
+[gd_scene format=3 uid="uid://uiktb4vsvbd5"]
+
+[ext_resource type="Texture2D" uid="uid://b4qv1oiiurhg2" path="res://textures/background.png" id="1_obfg2"]
+[ext_resource type="Texture2D" uid="uid://t8datl44yrvp" path="res://textures/coil.png" id="2_d3o1r"]
+[ext_resource type="Texture2D" uid="uid://cwjtu1jwq53qe" path="res://textures/wall.png" id="3_5vtl4"]
+[ext_resource type="Script" uid="uid://cgbji41ygrty6" path="res://scripts/mover.gd" id="3_ndtgc"]
+[ext_resource type="Texture2D" uid="uid://bpl5fcoao0t6x" path="res://textures/gear.png" id="4_sfjfo"]
+[ext_resource type="Texture2D" uid="uid://ckahum84e7yy0" path="res://textures/engine.png" id="5_n7xp7"]
+[ext_resource type="Script" uid="uid://dfeqehrxusekm" path="res://pixel_rope/pixel_rope.gd" id="6_5vtl4"]
+[ext_resource type="Script" uid="uid://dw3ccorpara6f" path="res://pixel_rope/pixel_rope_segment.gd" id="7_sfjfo"]
+[ext_resource type="Script" uid="uid://cemyqtjaggmy5" path="res://pixel_rope/pixel_rope_controller.gd" id="8_n7xp7"]
+[ext_resource type="Script" uid="uid://bnsst0jt8adwk" path="res://pixel_rope/controllers/rope_wind_controller.gd" id="9_ndtgc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7xp7"]
+size = Vector2(52, 13)
+
+[sub_resource type="Resource" id="Resource_5vtl4"]
+script = ExtResource("7_sfjfo")
+color = Color(0.39607844, 0.2509804, 0.3254902, 1)
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_sfjfo"]
+script = ExtResource("7_sfjfo")
+color = Color(0.65882355, 0.3764706, 0.3647059, 1)
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_n7xp7"]
+script = ExtResource("7_sfjfo")
+length = 2.0
+color = Color(0.23529412, 0.41960785, 0.39215687, 1)
+roll_end_segment = 13
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_ndtgc"]
+script = ExtResource("7_sfjfo")
+color = Color(0.3764706, 0.68235296, 0.48235294, 1)
+roll_end_segment = 13
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_a47j3"]
+script = ExtResource("7_sfjfo")
+length = 0.5
+color = Color(0.9647059, 0.90588236, 0.6117647, 1)
+roll_end_segment = 13
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_5t2aa"]
+script = ExtResource("7_sfjfo")
+color = Color(0.3764706, 0.68235296, 0.48235294, 1)
+roll_end_segment = 13
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_8icdo"]
+script = ExtResource("9_ndtgc")
+strength = 0.5
+metadata/_custom_type_script = "uid://bnsst0jt8adwk"
+
+[sub_resource type="Resource" id="Resource_r6lgu"]
+script = ExtResource("7_sfjfo")
+color = Color(0.9647059, 0.90588236, 0.6117647, 1)
+emission = 1.0
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_1rlap"]
+script = ExtResource("9_ndtgc")
+speed_a = 30.0
+speed_b = 50.0
+y_frequency = 5.0
+strength = 100.0
+metadata/_custom_type_script = "uid://bnsst0jt8adwk"
+
+[sub_resource type="Resource" id="Resource_3ttm7"]
+script = ExtResource("7_sfjfo")
+length = 0.3
+color = Color(0.65882355, 0.3764706, 0.3647059, 1)
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_8fdbm"]
+script = ExtResource("7_sfjfo")
+length = 0.5
+color = Color(0.9647059, 0.90588236, 0.6117647, 1)
+roll_start_segment = 1
+roll_end_segment = 3
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_kgay4"]
+script = ExtResource("7_sfjfo")
+length = 8.0
+color = Color(0.3764706, 0.68235296, 0.48235294, 1)
+roll_start_segment = 1
+roll_end_segment = 3
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_l3s5x"]
+script = ExtResource("7_sfjfo")
+length = 0.3
+color = Color(0.65882355, 0.3764706, 0.3647059, 1)
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_mu1o3"]
+script = ExtResource("7_sfjfo")
+length = 0.05
+color = Color(0.9647059, 0.90588236, 0.6117647, 1)
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_315yl"]
+script = ExtResource("7_sfjfo")
+color = Color(0.65882355, 0.3764706, 0.3647059, 1)
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_hostk"]
+script = ExtResource("7_sfjfo")
+length = 0.05
+color = Color(0.9647059, 0.90588236, 0.6117647, 1)
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="Resource" id="Resource_m2no3"]
+script = ExtResource("9_ndtgc")
+strength = 1.0
+metadata/_custom_type_script = "uid://bnsst0jt8adwk"
+
+[sub_resource type="Resource" id="Resource_p5qor"]
+script = ExtResource("7_sfjfo")
+color = Color(0.12156863, 0.14117648, 0.29411766, 1)
+metadata/_custom_type_script = "uid://dw3ccorpara6f"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ndtgc"]
+radius = 25.0
+
+[node name="Demo" type="Node2D" unique_id=1922009711]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1876780254]
+texture_filter = 1
+position = Vector2(128, 72)
+texture = ExtResource("1_obfg2")
+
+[node name="Anchor1" type="Node2D" parent="Background" unique_id=1659114196]
+position = Vector2(-47, 28)
+
+[node name="Anchor2" type="Node2D" parent="Background" unique_id=1721663535]
+position = Vector2(8, 17)
+
+[node name="Anchor3" type="Node2D" parent="Background" unique_id=1416825188]
+position = Vector2(48, 17)
+
+[node name="Anchor26" type="Node2D" parent="Background" unique_id=902955774]
+position = Vector2(48, 50)
+
+[node name="Anchor27" type="Node2D" parent="Background" unique_id=1024133959]
+position = Vector2(9, 51)
+
+[node name="Anchor28" type="Node2D" parent="Background" unique_id=59392806]
+position = Vector2(89, 51)
+
+[node name="Anchor4" type="Node2D" parent="Background" unique_id=1115942145]
+position = Vector2(88, 17)
+
+[node name="Anchor5" type="Node2D" parent="Background" unique_id=1161770617]
+position = Vector2(111, -22)
+
+[node name="Anchor6" type="Node2D" parent="Background" unique_id=874889141]
+position = Vector2(78, -44)
+
+[node name="Anchor7" type="Node2D" parent="Background" unique_id=1327152718]
+position = Vector2(82, -44)
+
+[node name="Anchor9" type="Node2D" parent="Background" unique_id=717805015]
+position = Vector2(47, -60)
+
+[node name="Anchor10" type="Node2D" parent="Background" unique_id=2024108519]
+position = Vector2(37, -60)
+
+[node name="Anchor11" type="Node2D" parent="Background" unique_id=1990575901]
+position = Vector2(25, -60)
+
+[node name="Anchor12" type="Node2D" parent="Background" unique_id=252089735]
+position = Vector2(14, -60)
+
+[node name="Anchor13" type="Node2D" parent="Background" unique_id=104396997]
+position = Vector2(3, -60)
+
+[node name="Anchor14" type="Node2D" parent="Background" unique_id=1241455521]
+position = Vector2(-7, -60)
+
+[node name="Anchor15" type="Node2D" parent="Background" unique_id=243144960]
+position = Vector2(-18, -60)
+
+[node name="Anchor16" type="Node2D" parent="Background" unique_id=1348640089]
+position = Vector2(-44, -48)
+
+[node name="Anchor17" type="Node2D" parent="Background" unique_id=1789349439]
+position = Vector2(-56, -48)
+
+[node name="Anchor18" type="Node2D" parent="Background" unique_id=1246108824]
+position = Vector2(-68, -43)
+
+[node name="Anchor19" type="Node2D" parent="Background" unique_id=1151697100]
+position = Vector2(-80, -48)
+
+[node name="Anchor20" type="Node2D" parent="Background" unique_id=131119640]
+position = Vector2(-92, -43)
+
+[node name="Anchor21" type="Node2D" parent="Background" unique_id=1408249501]
+position = Vector2(-104, -48)
+
+[node name="Anchor22" type="Node2D" parent="Background" unique_id=836829715]
+position = Vector2(-116, 27)
+
+[node name="Anchor23" type="Node2D" parent="Background" unique_id=114502731]
+position = Vector2(-116, 54)
+
+[node name="Anchor24" type="Node2D" parent="Background" unique_id=471540174]
+position = Vector2(-80, 56)
+
+[node name="Anchor25" type="Node2D" parent="Background" unique_id=371460806]
+position = Vector2(-33, 38)
+
+[node name="Anchor8" type="Node2D" parent="Background" unique_id=1515541118]
+position = Vector2(111, -26)
+
+[node name="Coil1" type="Sprite2D" parent="." unique_id=1865307192]
+texture_filter = 1
+position = Vector2(-22, 73)
+texture = ExtResource("2_d3o1r")
+centered = false
+script = ExtResource("3_ndtgc")
+speed = 30.0
+distance = 25.0
+
+[node name="Anchor1" type="Node2D" parent="Coil1" unique_id=1591353880]
+position = Vector2(60, 7)
+
+[node name="Anchor2" type="Node2D" parent="Coil1" unique_id=999810263]
+position = Vector2(44, 3)
+
+[node name="Anchor3" type="Node2D" parent="Coil1" unique_id=1867261356]
+position = Vector2(20, 3)
+
+[node name="Coil2" type="Sprite2D" parent="." unique_id=1254610506]
+texture_filter = 1
+position = Vector2(-22, 41)
+texture = ExtResource("2_d3o1r")
+centered = false
+script = ExtResource("3_ndtgc")
+speed = 15.0
+distance = 25.0
+
+[node name="Anchor1" type="Node2D" parent="Coil2" unique_id=950891913]
+position = Vector2(60, 7)
+
+[node name="Anchor2" type="Node2D" parent="Coil2" unique_id=1361350647]
+position = Vector2(44, 12)
+
+[node name="Anchor3" type="Node2D" parent="Coil2" unique_id=1236600892]
+position = Vector2(14, 12)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Coil2" unique_id=1385016198]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coil2/StaticBody2D" unique_id=88884561]
+position = Vector2(26, 7.5)
+shape = SubResource("RectangleShape2D_n7xp7")
+
+[node name="Gear" type="Sprite2D" parent="." unique_id=1302394562]
+texture_filter = 1
+position = Vector2(121, 41)
+texture = ExtResource("4_sfjfo")
+script = ExtResource("3_ndtgc")
+spin = true
+speed = 3.0
+
+[node name="Anchor1" type="Node2D" parent="Gear" unique_id=594163681]
+position = Vector2(-17, 0)
+
+[node name="Anchor2" type="Node2D" parent="Gear" unique_id=322801516]
+position = Vector2(0, 17)
+
+[node name="Anchor3" type="Node2D" parent="Gear" unique_id=452876665]
+position = Vector2(17, 0)
+
+[node name="Anchor4" type="Node2D" parent="Gear" unique_id=2078969689]
+position = Vector2(0, -17)
+
+[node name="Engine" type="Sprite2D" parent="." unique_id=1239250471]
+texture_filter = 1
+position = Vector2(176, 37)
+texture = ExtResource("5_n7xp7")
+centered = false
+script = ExtResource("3_ndtgc")
+speed = 30.0
+distance = 1.0
+pause_time = 0.0
+
+[node name="Anchor1" type="Node2D" parent="Engine" unique_id=973377899]
+position = Vector2(24, 4)
+
+[node name="Anchor2" type="Node2D" parent="Engine" unique_id=1699022]
+position = Vector2(29, 8)
+
+[node name="Anchor3" type="Node2D" parent="Engine" unique_id=1633554602]
+position = Vector2(35, 8)
+
+[node name="Anchor4" type="Node2D" parent="Engine" unique_id=530196818]
+position = Vector2(40, 4)
+
+[node name="Anchor5" type="Node2D" parent="Engine" unique_id=151055341]
+position = Vector2(42, 10)
+
+[node name="Anchor6" type="Node2D" parent="Engine" unique_id=482124625]
+position = Vector2(42, 15)
+
+[node name="Anchor7" type="Node2D" parent="Engine" unique_id=1547353030]
+position = Vector2(6, 11)
+
+[node name="Ropes" type="Node2D" parent="." unique_id=7686804]
+
+[node name="Rope1" type="MeshInstance2D" parent="Ropes" unique_id=533106337 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Engine/Anchor1")
+end_node = NodePath("../../Background/Anchor6")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
+segment_repeats = 6
+initial_length = -7.0
+collision_radius = 1.0
+
+[node name="Rope2" type="MeshInstance2D" parent="Ropes" unique_id=156954660 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor7")
+end_node = NodePath("../../Engine/Anchor4")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
+segment_repeats = 6
+initial_length = -7.0
+collision_radius = 1.0
+
+[node name="Rope3" type="MeshInstance2D" parent="Ropes" unique_id=633731380 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor7")
+end_node = NodePath("../../Engine/Anchor2")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
+segment_repeats = 6
+initial_length = -7.0
+collision_radius = 1.0
+
+[node name="Rope4" type="MeshInstance2D" parent="Ropes" unique_id=392454666 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor6")
+end_node = NodePath("../../Engine/Anchor3")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
+segment_repeats = 6
+initial_length = -7.0
+collision_radius = 1.0
+
+[node name="Rope5" type="MeshInstance2D" parent="Ropes" unique_id=966701414 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Engine/Anchor5")
+end_node = NodePath("../../Engine/Anchor3")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
+segment_repeats = 6
+initial_length = -7.0
+collision_radius = 1.0
+
+[node name="Rope7" type="MeshInstance2D" parent="Ropes" unique_id=1467047071 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor8")
+end_node = NodePath("../../Engine/Anchor5")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
+segment_repeats = 6
+initial_length = 0.0
+collision_radius = 1.0
+
+[node name="Rope8" type="MeshInstance2D" parent="Ropes" unique_id=1244404820 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Engine/Anchor6")
+end_node = NodePath("../../Background/Anchor5")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
+segment_repeats = 6
+initial_length = 0.0
+collision_radius = 1.0
+
+[node name="Rope43" type="MeshInstance2D" parent="Ropes" unique_id=1921207016 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Coil1/Anchor2")
+end_node = NodePath("../../Coil2/Anchor2")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
+segment_repeats = 6
+initial_length = 0.0
+collision_radius = 1.0
+
+[node name="Rope44" type="MeshInstance2D" parent="Ropes" unique_id=2066944086 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Coil1/Anchor3")
+end_node = NodePath("../../Coil2/Anchor3")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
+segment_repeats = 6
+initial_length = 0.0
+collision_radius = 1.0
+
+[node name="Rope45" type="MeshInstance2D" parent="Ropes" unique_id=200448456 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Coil1/Anchor2")
+end_node = NodePath("../../Coil1/Anchor3")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_5vtl4"), SubResource("Resource_sfjfo")])
+segment_repeats = 6
+initial_length = 0.0
+collision_radius = 1.0
+
+[node name="Rope9" type="MeshInstance2D" parent="Ropes" unique_id=1976298833 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor3")
+end_node = NodePath("../../Background/Anchor2")
+grace_alpha = 0.0
+rope_thickness = 2
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_n7xp7"), SubResource("Resource_ndtgc"), SubResource("Resource_a47j3"), SubResource("Resource_5t2aa")])
+segment_repeats = 3
+initial_length = 10.0
+rope_force = Vector2(0, -200)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_8icdo")])
+collision_radius = 1.0
+
+[node name="Rope10" type="MeshInstance2D" parent="Ropes" unique_id=814330423 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor2")
+end_node = NodePath("../../Background/Anchor25")
+grace_alpha = 0.0
+rope_thickness = 2
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_n7xp7"), SubResource("Resource_ndtgc"), SubResource("Resource_a47j3"), SubResource("Resource_5t2aa")])
+segment_repeats = 3
+initial_length = 10.0
+rope_force = Vector2(0, -200)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_8icdo")])
+collision_radius = 1.0
+
+[node name="Rope11" type="MeshInstance2D" parent="Ropes" unique_id=1591686734 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor3")
+end_node = NodePath("../../Background/Anchor4")
+grace_alpha = 0.0
+rope_thickness = 2
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_n7xp7"), SubResource("Resource_ndtgc"), SubResource("Resource_a47j3"), SubResource("Resource_5t2aa")])
+segment_repeats = 3
+initial_length = 10.0
+rope_force = Vector2(0, -200)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_8icdo")])
+collision_radius = 1.0
+
+[node name="Rope12" type="MeshInstance2D" parent="Ropes" unique_id=1210677506 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Gear/Anchor4")
+end_node = NodePath("../../Engine/Anchor7")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
+initial_length = 20.0
+rope_force = Vector2(0, 0)
+rope_damping = 0.0
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collision_radius = 1.0
+
+[node name="Rope18" type="MeshInstance2D" parent="Ropes" unique_id=1671549612 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Gear/Anchor2")
+end_node = NodePath("../../Engine/Anchor7")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
+initial_length = 20.0
+rope_force = Vector2(0, 0)
+rope_damping = 0.0
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collision_radius = 1.0
+
+[node name="Rope13" type="MeshInstance2D" parent="Ropes" unique_id=1205847873 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Gear/Anchor1")
+end_node = NodePath("../../Coil2/Anchor1")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
+initial_length = 20.0
+rope_force = Vector2(0, 0)
+rope_damping = 0.0
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collision_radius = 1.0
+
+[node name="Rope14" type="MeshInstance2D" parent="Ropes" unique_id=1116231785 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Coil1/Anchor1")
+end_node = NodePath("../../Coil2/Anchor1")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
+initial_length = 5.0
+rope_force = Vector2(0, 0)
+rope_damping = 0.0
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collision_radius = 1.0
+
+[node name="Rope15" type="MeshInstance2D" parent="Ropes" unique_id=602192231 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Coil1/Anchor1")
+end_node = NodePath("../../Background/Anchor1")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
+initial_length = 20.0
+rope_force = Vector2(0, 0)
+rope_damping = 0.0
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collision_radius = 1.0
+
+[node name="Rope27" type="MeshInstance2D" parent="Ropes" unique_id=222340689 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Gear/Anchor4")
+end_node = NodePath("../../Engine/Anchor7")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
+initial_length = 20.0
+rope_force = Vector2(0, 0)
+rope_damping = 0.0
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collision_radius = 1.0
+
+[node name="Rope39" type="MeshInstance2D" parent="Ropes" unique_id=1018595768 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Gear/Anchor2")
+end_node = NodePath("../../Engine/Anchor7")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
+initial_length = 20.0
+rope_force = Vector2(0, 0)
+rope_damping = 0.0
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collision_radius = 1.0
+
+[node name="Rope40" type="MeshInstance2D" parent="Ropes" unique_id=836258889 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Gear/Anchor1")
+end_node = NodePath("../../Coil2/Anchor1")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
+initial_length = 20.0
+rope_force = Vector2(0, 0)
+rope_damping = 0.0
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collision_radius = 1.0
+
+[node name="Rope41" type="MeshInstance2D" parent="Ropes" unique_id=462945427 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Coil1/Anchor1")
+end_node = NodePath("../../Coil2/Anchor1")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
+initial_length = 5.0
+rope_force = Vector2(0, 0)
+rope_damping = 0.0
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collision_radius = 1.0
+
+[node name="Rope42" type="MeshInstance2D" parent="Ropes" unique_id=865621636 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Coil1/Anchor1")
+end_node = NodePath("../../Background/Anchor1")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
+initial_length = 20.0
+rope_force = Vector2(0, 0)
+rope_damping = 0.0
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collision_radius = 1.0
+
+[node name="Rope19" type="MeshInstance2D" parent="Ropes" unique_id=1551399402 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Gear/Anchor1")
+end_node = NodePath("../../Gear/Anchor3")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_r6lgu")])
+initial_length = 20.0
+rope_force = Vector2(0, 0)
+rope_damping = 0.0
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_1rlap")])
+collision_radius = 1.0
+
+[node name="Rope16" type="MeshInstance2D" parent="Ropes" unique_id=618848493 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor24")
+end_node = NodePath("../../Background/Anchor22")
+grace_alpha = 0.0
+rope_thickness = 2
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_3ttm7"), SubResource("Resource_8fdbm"), SubResource("Resource_kgay4"), SubResource("Resource_l3s5x")])
+roll_velocity = 90.0
+initial_length = 0.0
+rope_force = Vector2(0, 50)
+collision_radius = 1.0
+
+[node name="Rope17" type="MeshInstance2D" parent="Ropes" unique_id=40224568 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor24")
+end_node = NodePath("../../Background/Anchor23")
+grace_alpha = 0.0
+rope_thickness = 2
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_3ttm7"), SubResource("Resource_8fdbm"), SubResource("Resource_kgay4"), SubResource("Resource_l3s5x")])
+roll_velocity = 90.0
+initial_length = 0.0
+rope_force = Vector2(0, 50)
+collision_radius = 1.0
+
+[node name="Rope20" type="MeshInstance2D" parent="Ropes" unique_id=1866216087 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor9")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_mu1o3"), SubResource("Resource_315yl"), SubResource("Resource_hostk")])
+initial_length = 10.0
+rope_force = Vector2(0, 400)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+
+[node name="Rope21" type="MeshInstance2D" parent="Ropes" unique_id=146635222 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor10")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_mu1o3"), SubResource("Resource_315yl"), SubResource("Resource_hostk")])
+initial_length = 10.0
+rope_force = Vector2(0, 400)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+
+[node name="Rope22" type="MeshInstance2D" parent="Ropes" unique_id=1159356063 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor12")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_mu1o3"), SubResource("Resource_315yl"), SubResource("Resource_hostk")])
+rope_force = Vector2(0, 400)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+
+[node name="Rope23" type="MeshInstance2D" parent="Ropes" unique_id=1245947408 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor13")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_mu1o3"), SubResource("Resource_315yl"), SubResource("Resource_hostk")])
+initial_length = 30.0
+rope_force = Vector2(0, 400)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+
+[node name="Rope24" type="MeshInstance2D" parent="Ropes" unique_id=1361554432 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor14")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_mu1o3"), SubResource("Resource_315yl"), SubResource("Resource_hostk")])
+initial_length = 30.0
+rope_force = Vector2(0, 400)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+
+[node name="Rope25" type="MeshInstance2D" parent="Ropes" unique_id=432618630 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor16")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_mu1o3"), SubResource("Resource_315yl"), SubResource("Resource_hostk")])
+initial_length = 30.0
+rope_force = Vector2(0, 400)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+
+[node name="Rope26" type="MeshInstance2D" parent="Ropes" unique_id=2138828966 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor17")
+end_node = NodePath("../../Background/Anchor18")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_mu1o3"), SubResource("Resource_315yl"), SubResource("Resource_hostk")])
+initial_length = 30.0
+rope_force = Vector2(0, 400)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+
+[node name="Rope28" type="MeshInstance2D" parent="Ropes" unique_id=1387954064 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor19")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_mu1o3"), SubResource("Resource_315yl"), SubResource("Resource_hostk")])
+initial_length = 30.0
+rope_force = Vector2(0, 400)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+
+[node name="Rope29" type="MeshInstance2D" parent="Ropes" unique_id=720681711 node_paths=PackedStringArray("start_node", "end_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor20")
+end_node = NodePath("../../Background/Anchor21")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_mu1o3"), SubResource("Resource_315yl"), SubResource("Resource_hostk")])
+initial_length = 30.0
+rope_force = Vector2(0, 400)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+
+[node name="Rope30" type="MeshInstance2D" parent="Ropes" unique_id=1982718658 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor26")
+grace_alpha = 0.0
+rope_thickness = 3
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_p5qor")])
+initial_length = 20.0
+rope_force = Vector2(0, -100)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+warmup_steps = 64
+warmup_timestep = 0.017
+
+[node name="Rope31" type="MeshInstance2D" parent="Ropes" unique_id=196032556 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor27")
+grace_alpha = 0.0
+rope_thickness = 3
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_p5qor")])
+initial_length = 20.0
+rope_force = Vector2(0, -100)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+warmup_steps = 64
+warmup_timestep = 0.017
+
+[node name="Rope32" type="MeshInstance2D" parent="Ropes" unique_id=1480973303 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor28")
+grace_alpha = 0.0
+rope_thickness = 3
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_p5qor")])
+initial_length = 20.0
+rope_force = Vector2(0, -100)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+warmup_steps = 64
+warmup_timestep = 0.017
+
+[node name="Rope33" type="MeshInstance2D" parent="Ropes" unique_id=1121896283 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor26")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_p5qor")])
+initial_length = 10.0
+rope_force = Vector2(30, -100)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+warmup_steps = 64
+warmup_timestep = 0.017
+
+[node name="Rope34" type="MeshInstance2D" parent="Ropes" unique_id=1462812489 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor27")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_p5qor")])
+initial_length = 10.0
+rope_force = Vector2(30, -100)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+warmup_steps = 64
+warmup_timestep = 0.017
+
+[node name="Rope35" type="MeshInstance2D" parent="Ropes" unique_id=1935633973 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor28")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_p5qor")])
+initial_length = 10.0
+rope_force = Vector2(30, -100)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+warmup_steps = 64
+warmup_timestep = 0.017
+
+[node name="Rope36" type="MeshInstance2D" parent="Ropes" unique_id=1869080296 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor26")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_p5qor")])
+initial_length = 10.0
+rope_force = Vector2(-40, -100)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+warmup_steps = 64
+warmup_timestep = 0.017
+
+[node name="Rope37" type="MeshInstance2D" parent="Ropes" unique_id=689735626 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor27")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_p5qor")])
+initial_length = 10.0
+rope_force = Vector2(-40, -100)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+warmup_steps = 64
+warmup_timestep = 0.017
+
+[node name="Rope38" type="MeshInstance2D" parent="Ropes" unique_id=1203910635 node_paths=PackedStringArray("start_node")]
+script = ExtResource("6_5vtl4")
+start_node = NodePath("../../Background/Anchor28")
+grace_alpha = 0.0
+segments = Array[ExtResource("7_sfjfo")]([SubResource("Resource_p5qor")])
+initial_length = 10.0
+rope_force = Vector2(-40, -100)
+controllers = Array[ExtResource("8_n7xp7")]([SubResource("Resource_m2no3")])
+collide_with_world = true
+collision_radius = 1.0
+warmup_steps = 64
+warmup_timestep = 0.017
+
+[node name="Wall" type="Sprite2D" parent="." unique_id=1790321255]
+texture_filter = 1
+position = Vector2(0, 38)
+texture = ExtResource("3_5vtl4")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1287098285]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2048899048]
+position = Vector2(121, 41)
+shape = SubResource("CircleShape2D_ndtgc")
