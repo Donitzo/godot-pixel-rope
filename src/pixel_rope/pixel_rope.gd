@@ -45,11 +45,15 @@ func is_point_pinned(i: int) -> bool:
 ## The fraction of existing pixels the mesh must grow or shrink before being rebuilt (0.2 = 20%)
 @export var mesh_rebuild_threshold: float = 0.2
 
+@export_subgroup('Segments')
+
 ## List of rope segments.
 @export var segments: Array[PixelRopeSegment] = []
 ## Repeat all segments this number of times.
 @export_range(1, 128) var segment_repeats: int = 1
 var _normalized_segment_lengths: PackedFloat32Array = PackedFloat32Array()
+
+@export_subgroup('Roll')
 
 ## Distance, in world units, that rolling segments are shifted/cycled along the rope.
 @export var roll: float
@@ -58,14 +62,18 @@ var _normalized_segment_lengths: PackedFloat32Array = PackedFloat32Array()
 
 @export_group('Simulation')
 
+const MAX_CONTROL_POINTS: int = 64
+## The number of control points in the rope.
+@export_range(2, MAX_CONTROL_POINTS) var control_point_count: int = 16
+
+@export_subgroup('Length')
+
 ## The initial length of the rope in world units.
 @export var initial_length: float = 50.0
 ## Whether the initial length is added on top of the length between the start_node to the end_node.
 @export var initial_length_is_sag: bool = true
 
-const MAX_CONTROL_POINTS: int = 64
-## The number of control points in the rope.
-@export_range(2, MAX_CONTROL_POINTS) var control_point_count: int = 16
+@export_subgroup('Physics')
 
 ## How strongly the rope resists compression.
 @export_range(0.0, 1.0) var compression_stiffness: float = 0.1
@@ -79,8 +87,19 @@ const MAX_CONTROL_POINTS: int = 64
 ## The number of constrain iterations per physics step.
 @export var rope_constraint_iterations: int = 3
 
+@export_subgroup('Controllers')
+
 ## Rope controllers allows you to control rope behaviour.
 @export var controllers: Array[PixelRopeController] = []
+
+@export_subgroup('Warmup')
+
+## The number of warmup simulation steps.
+@export var warmup_steps: int = 32
+## The warmup timestep.
+@export var warmup_timestep: float = 1.0 / 60.0
+## Whether to disable the rope after warmup.
+@export var one_shot: bool = false
 
 @export_group('Collision')
 
@@ -90,10 +109,16 @@ const MAX_CONTROL_POINTS: int = 64
 @export_flags_2d_physics var collision_mask: int = 1
 ## Distance to push rope points away from hit surfaces.
 @export_range(0.0, 32.0) var collision_radius: float = 0.1
+
+@export_subgroup('Response')
+
 ## Tangential velocity removed on collision.
 @export_range(0.0, 1.0) var collision_friction: float = 0.7
 ## Normal velocity retained after impact.
 @export_range(0.0, 1.0) var collision_restitution: float = 0.2
+
+@export_subgroup('Performance')
+
 ## Interval between control points tested for collisions. 1 = test every point. Is fixed.
 @export_range(1, 8) var collision_test_point_interval: int = 1
 ## Collision test time interval in physics ticks for idle rope control points
@@ -103,15 +128,6 @@ const MAX_CONTROL_POINTS: int = 64
 
 # Raycast distance from INSIDE a collision shape towards the surface
 const _RAYCAST_DISTANCE: float = 8.0
-
-@export_group('Warmup')
-
-## The number of warmup simulation steps.
-@export var warmup_steps: int = 32
-## The warmup timestep.
-@export var warmup_timestep: float = 1.0 / 60.0
-## Whether to disable the rope after warmup.
-@export var one_shot: bool = false
 
 # Shader material
 @onready var _material: ShaderMaterial = material as ShaderMaterial
