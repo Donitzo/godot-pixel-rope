@@ -1,3 +1,7 @@
+## Demo
+
+The [demo project](https://donitz.itch.io/godot-pixel-rope) is hosted on Itch.io and shows a bunch of different rope-like effects.
+
 # Godot Pixel Rope
 
 ![Sample](https://github.com/Donitzo/godot-pixel-rope/blob/main/images/example.png)
@@ -8,12 +12,7 @@ This project contains a pixelated Verlet-driven rope addon for Godot. The ropes 
 
 The addon also includes helper functions and more advanced features such as world collisions, cutting, and pinning control points.
 
-## Demo
-
-The [demo project](https://donitz.itch.io/godot-pixel-rope) is hosted on Itch.io and shows a bunch of different rope-like effects.
-
 ## Instructions
-
 
 The demo project is available in the `src` directory. The only files you need to copy into your own project are in the `pixel_rope` directory.
 
