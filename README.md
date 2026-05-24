@@ -26,6 +26,8 @@ After you hook up the ropes to the nodes, you will be able to see the rope conne
 
 You can customize the `pixel_rope.gdshader` shader to add your own effects in the fragment shader.
 
+Use the `cut_rope`, `cut_rope_at_position`, `pin_rope`, `pin_rope_at_position` methods to cut and pin the rope.
+
 Extend the `PixelRopeController` class, or edit `simulate_points` in the `PixelRope` class directly, if you want to control the rope yourself.
 
 ## Feedback & Bug Reports
