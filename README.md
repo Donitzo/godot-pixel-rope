@@ -12,6 +12,8 @@ This project contains a pixelated Verlet-driven rope addon for Godot. The ropes 
 
 The addon also includes helper functions and more advanced features such as world collisions, cutting, and pinning control points.
 
+**Note**: The ropes are by default supersampled by two pixels per world-pixel, to compensate for stretching.
+
 ## Instructions
 
 The demo project is available in the `src` directory. The only files you need to copy into your own project are in the `pixel_rope` directory.
