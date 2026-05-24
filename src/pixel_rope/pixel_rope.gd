@@ -126,7 +126,7 @@ var rope_length: float:
         var change_factor: float = 1 if _pixel_count == 0 else\
             abs(required_pixel_count - _pixel_count) / float(_pixel_count)
         var needs_rebuild: bool = _material != null and (
-            _pixel_count == 0 or change_factor >= mesh_rebuild_threshold
+            _pixel_count == 0 or required_pixel_count != _pixel_count and change_factor >= mesh_rebuild_threshold
         )
 
         if needs_rebuild:
