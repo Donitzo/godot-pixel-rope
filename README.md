@@ -8,11 +8,11 @@ The [demo project](https://donitz.itch.io/godot-pixel-rope) is hosted on Itch.io
 
 ## Description
 
-This project contains a pixelated Verlet-driven rope addon for Godot. The ropes were created specifically for pixelated retro graphics, as they are drawn pixel by pixel instead of as connected quads.
+This project contains a pixelated Verlet-driven rope addon for Godot. The ropes were created specifically for pixelated retro graphics, as they are drawn pixel by pixel instead of as connected quads. You can alternatively render the rope as smooth quads.
 
 The addon also includes helper functions and more advanced features such as world collisions, cutting, and pinning control points.
 
-**Note**: The ropes are by default supersampled by two pixels per world-pixel, to compensate for stretching.
+**Note**: The ropes are by default supersampled by two pixels per world-pixel, to compensate for stretching. Reduce `pixels_per_unit` to 1 or less when drawing smooth ropes.
 
 ## Instructions
 

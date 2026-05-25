@@ -26,6 +26,9 @@ func is_point_pinned(i: int) -> bool:
 
 @export_group('Visuals')
 
+## Draw the rope as a smooth ribbon instead of pixels.
+@export var smooth_rope: bool = false
+
 ## The alpha of grace pixels. Use 0 to disable.
 @export_range(0.0, 1.0) var grace_alpha: float = 0.5:
     set(value):
@@ -183,7 +186,8 @@ func _ready() -> void:
 
     _material = ShaderMaterial.new()
     material = _material
-    _material.shader = preload('./shaders/pixel_rope.gdshader')
+    _material.shader = preload('./shaders/smooth_rope.gdshader')\
+        if smooth_rope else preload('./shaders/pixel_rope.gdshader')
 
     _cut_control_points.resize(MAX_CONTROL_POINTS)
     _temp_control_points.resize(MAX_CONTROL_POINTS)
