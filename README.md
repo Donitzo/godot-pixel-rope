@@ -1,4 +1,4 @@
-## Demo
+o## Demo
 
 The [demo project](https://donitz.itch.io/godot-pixel-rope) is hosted on Itch.io and shows a bunch of different rope-like effects.
 
@@ -29,6 +29,8 @@ After you hook up the ropes to the nodes, you will be able to see the rope conne
 You can customize the `pixel_rope.gdshader` shader to add your own effects in the fragment shader.
 
 Use the `cut_rope`, `cut_rope_at_position`, `pin_rope`, `pin_rope_at_position` methods to cut and pin the rope.
+
+`rope_length` can be edited at runtime, causing the mesh to be rebuilt when required.
 
 Extend the `PixelRopeController` class, or edit `simulate_points` in the `PixelRope` class directly, if you want to control the rope yourself.
 
